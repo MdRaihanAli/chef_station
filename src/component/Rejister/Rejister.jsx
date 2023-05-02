@@ -1,20 +1,28 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Button, Card, Form } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../../AuthProvider/AuthProvider'
 
 function Rejister() {
-
+const {createUser}=useContext(AuthContext)
     const rejisterHandel=(e)=>{
         e.preventDefault()
         const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
         const photo = e.target.photo.value;
+        // console.log(name, password, email, photo);
 
-        console.log(name, password, email, photo);
-
+        createUser(email, password)
+        .then(user=>{
+            console.log(user);
+        })
+        .catch(err=>{
+            console.log(err);
+        })
 
     }
+    
     return (
         <div >
             <Card className='mx-auto mt-md-5' style={{ maxWidth: '18rem' }}>

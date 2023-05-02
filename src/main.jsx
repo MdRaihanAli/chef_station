@@ -14,6 +14,7 @@ import Recipes from './layout/Recipes.jsx';
 import Details from './component/Details/Details.jsx';
 import Login from './component/Login/Login.jsx';
 import Rejister from './component/Rejister/Rejister.jsx';
+import AuthProvider from './AuthProvider/AuthProvider.jsx';
 
 
 const router = createBrowserRouter([
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
       {
         path: ':id',
         element: <Details></Details>,
-        loader: ({params})=> fetch(`http://localhost:5000/recipies/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/recipies/${params.id}`)
       },
       {
         path: 'login',
@@ -44,6 +45,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )

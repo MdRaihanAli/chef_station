@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Button, Card, Form } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../../AuthProvider/AuthProvider'
 
 
 function Login() {
+
+    const {name} =useContext(AuthContext)
+    console.log(name);
 
     const loginHandel=(e)=>{
         e.preventDefault()

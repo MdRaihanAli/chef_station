@@ -27,7 +27,7 @@ function Details() {
                         <ListGroup.Item>
                             <h6>ingredients</h6>
                             {
-                                ingredients.map((x, index) => <div>{index} . {x}</div>)
+                                ingredients.map((x, index) => <div key={index}>{index} . {x}</div>)
                             }
                         </ListGroup.Item>
 

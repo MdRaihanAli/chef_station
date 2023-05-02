@@ -4,12 +4,23 @@ import { Link } from 'react-router-dom'
 
 
 function Login() {
+
+    const loginHandel=(e)=>{
+        e.preventDefault()
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+        console.log(name, password);
+
+
+    }
+
     return (
         <div >
             <Card className='mx-auto mt-md-5' style={{ maxWidth: '18rem' }}>
                 <Card.Body>
                     <h3>please Login Here</h3>
-                    <Form>
+                    <Form onSubmit={loginHandel}>
                         <Form.Group className="mb-3" controlId="formGroupEmail">
                             <Form.Label>Email address</Form.Label>
                             <Form.Control type="email" name='email' placeholder="Enter email" />

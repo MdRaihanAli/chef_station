@@ -1,6 +1,5 @@
 import React from 'react'
 import Header from '../component/Header/Header'
-import { Outlet } from 'react-router-dom'
 import { Col, Container, Row } from 'react-bootstrap'
 import LeftHero from '../component/Hero/LeftHero'
 import Hero from '../component/Hero/Hero'
@@ -36,9 +35,9 @@ function Main() {
 
             <div>
                 <Container>
-                    <Row>
+                    
                         <Chef></Chef>
-                    </Row>
+                    
                 </Container>
             </div>
         </div>

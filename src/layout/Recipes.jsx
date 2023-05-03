@@ -13,12 +13,10 @@ function Recipes() {
             </div>
             <Container className=''>
                 <Row className=''>
-                    <Col md="6">
+                   
                         <Outlet></Outlet>
-                    </Col>
-                    <Col md="6">
-                        <LeftHero></LeftHero>
-                    </Col>
+                    
+                    
                 </Row>
 
             </Container>

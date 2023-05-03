@@ -63,11 +63,11 @@ function Login() {
                     <Form onSubmit={loginHandel}>
                         <Form.Group className="mb-3" controlId="formGroupEmail">
                             <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" name='email' placeholder="Enter email" />
+                            <Form.Control type="email" name='email' required placeholder="Enter email" />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formGroupPassword">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" name='password' placeholder="Password" />
+                            <Form.Control type="password" required name='password' placeholder="Password" />
                             <small>I don't have an Account.<Link to='/recipies/rejister'> Rejister?</Link></small>
                         </Form.Group>
                         <Button variant="primary" type="submit">

@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { FaArrowAltCircleRight, FaHandPointRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function Chef() {
     const [sefData, setSefData] = useState([])
@@ -20,8 +21,7 @@ function Chef() {
             {
                 sefData.map(data => <Col key={data.id} md="6" lg="4">
                     <Card className='my-3'>
-                        <img className='card-title' style={{ maxHeight: "300px" }} src={data.image} alt="" />
-                        <Card.Img width='50px' variant="top" />
+                            <img className='card-title rounded' style={{ maxHeight: "300px" }} src={data.image} alt="" />
                         <Card.Body>
                             <Card.Title>{data.name}</Card.Title>
 

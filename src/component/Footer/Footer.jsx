@@ -2,7 +2,7 @@ import React from "react"
 import { NavLink } from "react-router-dom"
 
 const Footer = () => <footer className="page-footer bg-dark text-white font-small blue pt-4">
-    <div className="container-fluid text-center text-md-left">
+    <div className="container text-center text-md-left">
         <div className="row">
             <div className="col-md-6 mt-md-0 mt-3">
                 <h5 className="text-uppercase">

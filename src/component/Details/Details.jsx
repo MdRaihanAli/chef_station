@@ -24,12 +24,13 @@ function Details() {
 
                     <img style={{ height: '80vh' }} src={image} alt="" />
                     <Card.Body>
-                        <ListGroup.Item>
-                            <h6>ingredients</h6>
-                            {
-                                ingredients.map((x, index) => <div key={index}>{index} . {x}</div>)
-                            }
-                        </ListGroup.Item>
+                    <ListGroup.Item>
+                                <h6>details</h6>
+                                {
+                                    details
+                                }
+                                <hr />
+                            </ListGroup.Item>
 
                     </Card.Body>
 
@@ -52,19 +53,17 @@ function Details() {
                                 <ToastContainer />
                             </ListGroup.Item>
                             <ListGroup.Item>
-                                <h6>recipes</h6>
+                                <h5 className='text-primary'>recipes</h5>
                                 {
-                                    recipes.map((x, i) => <div key={i}> <FaArrowRight /> {x}</div>)
+                                    recipes.map((x, i) => <div key={i}>
+                                        <div ><h6 ><FaArrowRight /> {x}</h6> 
+                                        {ingredients.map((x,i)=> <small key={i}>{x}</small> )}
+                                         </div>
+                                    </div> )
                                 }
                                 <hr />
                             </ListGroup.Item>
-                            <ListGroup.Item>
-                                <h6>details</h6>
-                                {
-                                    recipes
-                                }
-                                <hr />
-                            </ListGroup.Item>
+                           
                         </ListGroup>
 
                     </Card.Body>

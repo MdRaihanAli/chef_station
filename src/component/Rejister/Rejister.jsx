@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Button, Card, Form } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../AuthProvider/AuthProvider'
@@ -6,6 +6,7 @@ import { updateProfile } from 'firebase/auth'
 
 function Rejister() {
 const {createUser}=useContext(AuthContext)
+const [error, setError]=useState('')
 
     const rejisterHandel=(e)=>{
         e.preventDefault()
@@ -13,7 +14,10 @@ const {createUser}=useContext(AuthContext)
         const email = e.target.email.value;
         const password = e.target.password.value;
         const photo = e.target.photo.value;
-        // console.log(name, password, email, photo);
+       setError('')
+       if (password.length<6) {
+        setError('please input more than six charecter')
+       }
 
         createUser(email, password)
         .then(user=>{
@@ -41,7 +45,7 @@ const {createUser}=useContext(AuthContext)
                     <Form onSubmit={rejisterHandel}>
                         <Form.Group className="mb-3">
                             <Form.Label>Your Name</Form.Label>
-                            <Form.Control type="text" name='name' placeholder="Enter email" />
+                            <Form.Control type="text" required name='name' placeholder="Enter email" />
                         </Form.Group>
 
                         <Form.Group className="mb-3">
@@ -51,11 +55,14 @@ const {createUser}=useContext(AuthContext)
 
                         <Form.Group className="mb-3" controlId="formGroupEmail">
                             <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" name='email' placeholder="Enter email" />
+                            <Form.Control type="email" required name='email' placeholder="Enter email" />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formGroupPassword">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" name='password' placeholder="Password" />
+                            <Form.Control type="password" required name='password' placeholder="Password" />
+                            {
+                                error && <small className='text-danger'>{error}</small>
+                            }
                             <small>I have an Account.<Link to='/recipies/login'> Login?</Link></small>
                         </Form.Group>
                         <Button variant="primary" type="submit">

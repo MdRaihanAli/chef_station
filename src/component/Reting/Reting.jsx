@@ -4,8 +4,8 @@ import { FaArrowRight, FaStar } from 'react-icons/fa';
 
 function Reting() {
     return (
-        <div className='my-5'>
-            <h3 className='fw-bold text-center my-4'> <span className="text-primary">Review</span> </h3>
+        <div className='py-5'>
+            <h3 className='fw-bold text-center mb-4'> <span className="text-primary">Review</span> </h3>
             <div className="row g-2">
                 <div className="col-md-3">
                     <div className="card p-3 text-center">

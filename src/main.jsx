@@ -16,7 +16,7 @@ import Login from './component/Login/Login.jsx';
 import Rejister from './component/Rejister/Rejister.jsx';
 import AuthProvider from './AuthProvider/AuthProvider.jsx';
 import PrivetRoute from './component/PrivetRoute/PrivetRoute.jsx';
-import ErrorPage from './component_two/errorPage/ErrorPage.jsx';
+import ErrorPage from './component/errorPage/ErrorPage.jsx';
 
 
 const router = createBrowserRouter([

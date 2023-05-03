@@ -2,9 +2,11 @@ import React, { useContext } from 'react'
 import { Button, Card, Form } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../AuthProvider/AuthProvider'
+import { updateProfile } from 'firebase/auth'
 
 function Rejister() {
 const {createUser}=useContext(AuthContext)
+
     const rejisterHandel=(e)=>{
         e.preventDefault()
         const name = e.target.name.value;
@@ -16,11 +18,18 @@ const {createUser}=useContext(AuthContext)
         createUser(email, password)
         .then(user=>{
             console.log(user);
+            updateUserData(user.user,name,photo)
         })
         .catch(err=>{
             console.log(err);
         })
 
+    }
+    const updateUserData =(user, name, photo)=>{
+        updateProfile(user,{
+            displayName: name,
+            photoURL: photo
+        })
     }
     
     return (

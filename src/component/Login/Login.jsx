@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Button, Card, Form } from 'react-bootstrap'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { FaArrowRight, FaStar, FaGooglePlusG } from 'react-icons/fa';
+import { FaArrowRight, FaGithub, FaGooglePlusG } from 'react-icons/fa';
 import { AuthContext } from '../../AuthProvider/AuthProvider'
 import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider } from "firebase/auth";
 
@@ -77,7 +77,7 @@ function Login() {
                     <div className='mt-4'>
 
                         <Button onClick={googleLoginHandeler} variant="danger" className='w-100 mb-2' type="submit"> <FaGooglePlusG /> Login with Google </Button>
-                        <Button onClick={githubLoginHandeler} variant="dark" className='w-100' type="submit">  Login with Google </Button>
+                        <Button onClick={githubLoginHandeler} variant="dark" className='w-100' type="submit"> <FaGithub />  Login with Google </Button>
                     </div>
                 </Card.Body>
             </Card>

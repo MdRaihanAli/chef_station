@@ -17,10 +17,11 @@ function Header() {
     <div>
       <Navbar variant="dark">
         <Container>
-          <Navbar.Brand href="/">ChefWorks</Navbar.Brand>
+          <Navbar.Brand className='fw-bold' href="/">Chef Station</Navbar.Brand>
           <Nav className="ms-auto">
 
             <NavLink className='nav-link' to='/'>Home</NavLink>
+            <NavLink className='nav-link' to='/blog'>Blog</NavLink>
 
 
             {

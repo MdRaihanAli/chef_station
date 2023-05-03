@@ -7,6 +7,7 @@ const auth = getAuth(app);
 
 function AuthProvider({ children }) {
   const [user, setUser] = useState(null)
+  const [loding, setLoding]=useState(true)
 
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password)
@@ -19,6 +20,7 @@ function AuthProvider({ children }) {
   useEffect(() => {
     const unsribe = onAuthStateChanged(auth, carentUser => {
       setUser(carentUser)
+      setLoding(false)
     });
     return () => {
       return unsribe()
@@ -29,6 +31,7 @@ function AuthProvider({ children }) {
 
   const authInfo = {
     user,
+    loding,
     createUser,
     loginUser
   }

@@ -5,6 +5,7 @@ import LeftHero from '../component/Hero/LeftHero'
 import Hero from '../component/Hero/Hero'
 import Chef from '../component/Chef/Chef'
 import Footer from '../component/Footer/Footer'
+import Slider from '../component_two/slider/Slider'
 
 function Main() {
     const bg_img = 'https://media.istockphoto.com/id/1165399909/photo/delicious-meal-on-a-black-plate-top-view-copy-space.jpg?s=612x612&w=0&k=20&c=vrMzS4pY_QjiDtCzpVE3ClKqbU636fb4CKH0nlsduC4='
@@ -30,16 +31,17 @@ function Main() {
                             <LeftHero></LeftHero>
                         </Col>
                     </Row>
-
                 </Container>
-                
             </Container>
 
             <div>
                 <Container>
-                    
-                        <Chef></Chef>
-                    
+                    <Chef></Chef>
+                </Container>
+            </div>
+            <div>
+                <Container>
+                    <Slider></Slider>
                 </Container>
             </div>
             <Footer></Footer>

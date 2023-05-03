@@ -15,7 +15,7 @@ function PrivetRoute({children}) {
     if (user) {
        return children 
     } else {
-       return <Navigate to='/recipies/login' state={{from: location}}></Navigate> 
+       return <Navigate to='/recipies/login' state={{from: location}} replace></Navigate> 
     }
  
 }

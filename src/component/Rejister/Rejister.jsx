@@ -35,7 +35,7 @@ const {createUser}=useContext(AuthContext)
     
     return (
         <div >
-            <Card className='mx-auto mt-md-5' style={{ maxWidth: '18rem' }}>
+            <Card className='mx-auto my-md-5' style={{ maxWidth: '18rem' }}>
                 <Card.Body>
                     <h3>please Rejister Here</h3>
                     <Form onSubmit={rejisterHandel}>

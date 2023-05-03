@@ -2,6 +2,8 @@ import React from 'react'
 import Header from '../component/Header/Header'
 import { Col, Container, Row } from 'react-bootstrap'
 import { Outlet } from 'react-router-dom'
+import Footer from '../component/Footer/Footer'
+import LeftHero from '../component/Hero/LeftHero'
 
 function Recipes() {
     return (
@@ -10,8 +12,17 @@ function Recipes() {
                 <Header></Header>
             </div>
             <Container className=''>
-                <Outlet></Outlet>
+                <Row className=''>
+                    <Col md="6">
+                        <Outlet></Outlet>
+                    </Col>
+                    <Col md="6">
+                        <LeftHero></LeftHero>
+                    </Col>
+                </Row>
+
             </Container>
+            <Footer></Footer>
         </Container>
     )
 }

@@ -17,14 +17,15 @@ const {createUser}=useContext(AuthContext)
 
         createUser(email, password)
         .then(user=>{
-            console.log(user);
+            console.log(user.user);
             updateUserData(user.user,name,photo)
+            e.target.reset()
         })
         .catch(err=>{
             console.log(err);
         })
-
     }
+
     const updateUserData =(user, name, photo)=>{
         updateProfile(user,{
             displayName: name,

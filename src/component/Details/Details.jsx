@@ -54,7 +54,7 @@ function Details() {
                             <ListGroup.Item>
                                 <h6>recipes</h6>
                                 {
-                                    recipes.map((x, i) => <div> <FaArrowRight /> {x}</div>)
+                                    recipes.map((x, i) => <div key={i}> <FaArrowRight /> {x}</div>)
                                 }
                                 <hr />
                             </ListGroup.Item>

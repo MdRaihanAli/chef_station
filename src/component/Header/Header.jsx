@@ -1,11 +1,16 @@
-import React  from 'react'
+import React, { useContext }  from 'react'
 // import {  } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 function Header() {
+  const {user}=useContext(AuthContext)
+  console.log(user?.photoURL);
+  
+  
   return (
     <div>
         <Navbar  variant="dark">
@@ -16,7 +21,9 @@ function Header() {
             <NavLink className='nav-link' to='/'>Home</NavLink>
             <NavLink className='nav-link' to='/recipies/login'>Login</NavLink>
             <NavLink className='nav-link' to='/recipies/rejister'>Rejister</NavLink>
-            
+           {
+            user && <img title={user?.displayName} width='40' className='rounded-circle' src={`${user?.photoURL}`} alt="" />
+           } 
           </Nav>
         </Container>
       </Navbar>

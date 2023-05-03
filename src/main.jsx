@@ -15,6 +15,7 @@ import Details from './component/Details/Details.jsx';
 import Login from './component/Login/Login.jsx';
 import Rejister from './component/Rejister/Rejister.jsx';
 import AuthProvider from './AuthProvider/AuthProvider.jsx';
+import PrivetRoute from './component/PrivetRoute/PrivetRoute.jsx';
 
 
 const router = createBrowserRouter([
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: ':id',
-        element: <Details></Details>,
+        element: <PrivetRoute><Details></Details></PrivetRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/recipies/${params.id}`)
       },
       {

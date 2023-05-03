@@ -1,4 +1,4 @@
-import React, { useContext }  from 'react'
+import React, { useContext } from 'react'
 // import {  } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -7,23 +7,33 @@ import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 function Header() {
-  const {user}=useContext(AuthContext)
+  const { user, userLogOut } = useContext(AuthContext)
   console.log(user?.photoURL);
-  
-  
+
+  const logOut = () => {
+    userLogOut()
+  }
   return (
     <div>
-        <Navbar  variant="dark">
+      <Navbar variant="dark">
         <Container>
           <Navbar.Brand href="/">ChefWorks</Navbar.Brand>
           <Nav className="ms-auto">
-       
+
             <NavLink className='nav-link' to='/'>Home</NavLink>
-            <NavLink className='nav-link' to='/recipies/login'>Login</NavLink>
-            <NavLink className='nav-link' to='/recipies/rejister'>Rejister</NavLink>
-           {
-            user && <img title={user?.displayName} width='40' className='rounded-circle' src={`${user?.photoURL}`} alt="" />
-           } 
+
+
+            {
+              user ? <NavLink onClick={logOut} to='/' className='nav-link' >Logout</NavLink> : <>
+                <NavLink className='nav-link' to='/recipies/login'>Login</NavLink>
+                <NavLink className='nav-link' to='/recipies/rejister'>Rejister</NavLink>
+              </>
+            }
+
+            {
+              user && <img title={user?.displayName} width='40' className='rounded-circle' src={`${user?.photoURL}`} alt="" />
+            }
+
           </Nav>
         </Container>
       </Navbar>

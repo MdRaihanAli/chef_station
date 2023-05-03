@@ -9,14 +9,14 @@ function Chef() {
     const [sefData, setSefData] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/')
+        fetch('https://chef-recipe-hunter-server-mdraihanali.vercel.app/')
             .then(res => res.json())
             .then(data => setSefData(data))
         console.log(sefData);
     }, [])
     return (
         <Row >
-            <h4 className='my-lg-5 mt-3 fw-bold text-center'>Our Staf</h4>
+            <h4 className='mt-lg-5 mt-3 fw-bold text-center'>Our <span className="text-primary">Staf</span> </h4>
             {
                 sefData.map(data => <Col key={data.id} md="6" lg="4">
                     <Card className='my-3'>

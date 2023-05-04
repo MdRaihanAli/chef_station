@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-// import {  } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -21,11 +20,11 @@ function Header() {
           <Nav className="ms-auto">
 
             <NavLink className='nav-link' to='/'>Home</NavLink>
-            <NavLink className='nav-link' to='/blog'>Blog</NavLink>
+            <NavLink className='nav-link' to='/recipies/blog'>Blog</NavLink>
 
 
             {
-              user ? <NavLink onClick={logOut} to='/' className='nav-link' >Logout</NavLink> : <>
+              user ? "" : <>
                 <NavLink className='nav-link' to='/recipies/login'>Login</NavLink>
                 <NavLink className='nav-link' to='/recipies/rejister'>Rejister</NavLink>
               </>
@@ -34,7 +33,9 @@ function Header() {
             {
               user && <img title={user?.displayName} width='40' className='rounded-circle' src={`${user?.photoURL}`} alt="" />
             }
-
+              {
+                <button onClick={logOut} className='mx-3 btn btn-outline-light' >Logout </button>
+              }
           </Nav>
         </Container>
       </Navbar>

@@ -13,35 +13,34 @@ function Details() {
     const singleData = useLoaderData()
     const { name, image, experiance, like, rating, ingredients, recipes, details, id } = singleData
 
-    const tostHandeler=()=>{
+    const tostHandeler = () => {
         setClicke(true)
         toast("Added to your favorite list")
     }
     return (
-        <Row className=''>
-            <Col md="8">
+        <Row className='my-4'>
+            <Col md="6">
                 <Card>
 
                     <img style={{ height: '80vh' }} src={image} alt="" />
                     <Card.Body>
-                    <ListGroup.Item>
-                                <h6>details</h6>
-                                {
-                                    details
-                                }
-                                <hr />
-                            </ListGroup.Item>
+                        <ListGroup.Item>
+                            <h6>details</h6>
+                            {
+                                details
+                            }
+                            <hr />
+                        </ListGroup.Item>
 
                     </Card.Body>
 
 
                 </Card>
             </Col>
-            <Col md="4">
+            <Col md="6">
                 <Card>
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>
-                        {/* <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle> */}
                         <ListGroup variant="flush">
 
                             <ListGroup.Item>
@@ -54,16 +53,21 @@ function Details() {
                             </ListGroup.Item>
                             <ListGroup.Item>
                                 <h5 className='text-primary'>recipes</h5>
-                                {
-                                    recipes.map((x, i) => <div key={i}>
-                                        <div ><h6 ><FaArrowRight /> {x}</h6> 
-                                        {ingredients.map((x,i)=> <small key={i}>{x}</small> )}
-                                         </div>
-                                    </div> )
-                                }
+                                <Row>
+                                    {
+                                        recipes.map((x, i) => <Col className='g-3 ' md='12'>
+                                            <Card className='p-3' key={i}>
+                                                <div ><h6 ><FaArrowRight /> {x}</h6>
+                                                    {ingredients.map((x, i) => <div key={i}>{x}</div>)}
+                                                </div>
+                                            </Card>
+                                        </Col>
+                                        )
+                                    }
+                                </Row>
                                 <hr />
                             </ListGroup.Item>
-                           
+
                         </ListGroup>
 
                     </Card.Body>

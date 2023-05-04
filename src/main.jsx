@@ -17,6 +17,8 @@ import Rejister from './component/Rejister/Rejister.jsx';
 import AuthProvider from './AuthProvider/AuthProvider.jsx';
 import PrivetRoute from './component/PrivetRoute/PrivetRoute.jsx';
 import ErrorPage from './component/errorPage/ErrorPage.jsx';
+import BlogDetails from './component/Blog/BlogDetails.jsx';
+
 
 
 const router = createBrowserRouter([
@@ -40,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: 'rejister',
         element: <Rejister></Rejister>
+      },
+      {
+        path: 'blog',
+        element: <BlogDetails></BlogDetails>
       }
     ]
   },

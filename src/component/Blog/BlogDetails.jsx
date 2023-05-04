@@ -1,6 +1,9 @@
-import React, { useRef } from 'react'
-import { Card } from 'react-bootstrap'
-import ReactToPrint from 'react-to-print';
+import React, { useEffect, useRef, useState } from 'react'
+import { Card } from 'react-bootstrap';
+import Pdf from "react-to-pdf";
+
+// import "./styles.css";
+const ref = React.createRef();
 
 
 function BlogDetails() {
@@ -8,15 +11,17 @@ function BlogDetails() {
     return (
         <div>
             <div className='text-center my-4'>
-                <ReactToPrint trigger={()=><button className='btn btn-warning'>Creater Pdf</button>} content={()=>ref.current} />
+                {/* <ReactToPrint trigger={()=><button className='btn btn-warning'>Creater Pdf</button>} content={()=>ref.current} /> */}
 
-                
-                
-                
+                <Pdf targetRef={ref} filename="code-pase.pdf">
+                    {({ toPdf }) => <button className='btn btn-warning' onClick={toPdf}>Generate Pdf</button>}
+                </Pdf>
+
+
             </div>
             <div ref={ref} className="row g-4 mb-4 pdf">
                 <div className="col-md-6 sss">
-                    <Card className='aa'>
+                    <Card>
                         <Card.Body>
                             <Card.Header>Differences between uncontrolled and controlled components</Card.Header>
 

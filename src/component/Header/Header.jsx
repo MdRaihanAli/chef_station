@@ -34,7 +34,7 @@ function Header() {
               user && <img title={user?.displayName} width='40' className='rounded-circle' src={`${user?.photoURL}`} alt="" />
             }
               {
-                <button onClick={logOut} className='mx-3 btn btn-outline-light' >Logout </button>
+                user? <button onClick={logOut} className='mx-3 btn btn-outline-light' >Logout </button>:""
               }
           </Nav>
         </Container>

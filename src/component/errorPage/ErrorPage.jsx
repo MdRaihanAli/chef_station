@@ -7,8 +7,6 @@ import Header from '../Header/Header';
 
 function ErrorPage() {
 
-
-
   return (
     <div fluid
       style={{
@@ -21,9 +19,6 @@ function ErrorPage() {
       <div className='bg-dark'>
         <Header></Header>
       </div>
-      {/* <h1 className='display-5'> <FaBan /> </h1>
-        
-        <Link to='/'> <button className='btn btn-primary'>Goto Home</button></Link> */}
     </div>
   )
 }

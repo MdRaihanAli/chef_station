@@ -41,6 +41,7 @@ function Details() {
                 <Card>
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>
+                        <p className='text-muted'>{experiance} years experiance</p>
                         <ListGroup variant="flush">
 
                             <ListGroup.Item>

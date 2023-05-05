@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { AuthContext } from '../../AuthProvider/AuthProvider'
 import { updateProfile } from 'firebase/auth'
 import LeftHero from '../Hero/LeftHero'
+import useTitle from '../../hooks/useTitle'
 
 function Rejister() {
     const { createUser } = useContext(AuthContext)
@@ -37,7 +38,7 @@ function Rejister() {
             photoURL: photo
         })
     }
-
+    useTitle('Rejister')
     return (
         <div >
             <Row className=''>

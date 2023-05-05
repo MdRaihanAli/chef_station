@@ -5,6 +5,7 @@ import { FaArrowRight, FaGithub, FaGooglePlusG } from 'react-icons/fa';
 import { AuthContext } from '../../AuthProvider/AuthProvider'
 import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider } from "firebase/auth";
 import LeftHero from '../Hero/LeftHero';
+import useTitle from '../../hooks/useTitle';
 
 const auth = getAuth();
 const Provider = new GoogleAuthProvider()
@@ -55,7 +56,7 @@ function Login() {
                 console.log(err);
             })
     }
-
+    useTitle('Login')
     return (
         <div >
 

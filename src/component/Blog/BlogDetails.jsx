@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Card } from 'react-bootstrap';
 import Pdf from "react-to-pdf";
+import useTitle from '../../hooks/useTitle';
 const ref = React.createRef();
 
 
 function BlogDetails() {
     const ref = useRef()
+    useTitle('Blog')
     return (
         <div>
             <div className='text-center my-4'>

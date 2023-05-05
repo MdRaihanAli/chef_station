@@ -7,6 +7,7 @@ import { FaArrowRight, FaStar } from 'react-icons/fa';
 import Rating from 'react-rating';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from '../../hooks/useTitle';
 
 function Details() {
     const [clicke, setClicke] = useState(false)
@@ -17,6 +18,7 @@ function Details() {
         setClicke(true)
         toast("Added to your favorite list")
     }
+    useTitle('Details')
     return (
         <Row className='my-4'>
             <Col md="6">

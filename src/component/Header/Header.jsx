@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 function Header() {
   const { user, userLogOut } = useContext(AuthContext)
@@ -12,6 +13,7 @@ function Header() {
   const logOut = () => {
     userLogOut()
   }
+  useTitle('Header')
   return (
     <div>
       <Navbar variant="dark">

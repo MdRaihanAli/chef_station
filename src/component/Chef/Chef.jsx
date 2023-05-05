@@ -6,6 +6,7 @@ import { FaArrowAltCircleRight, FaHandPointRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
 import "./Chef.css"
+import useTitle from '../../hooks/useTitle';
 
 function Chef() {
     const [sefData, setSefData] = useState([])
@@ -16,6 +17,7 @@ function Chef() {
             .then(data => setSefData(data))
         console.log(sefData);
     }, [])
+    
     return (
         <Row >
             <h4 className='mt-lg-5 mt-3 fw-bold text-center'>Our <span className="text-primary">Staf</span> </h4>

@@ -10,14 +10,19 @@ import 'react-toastify/dist/ReactToastify.css';
 import useTitle from '../../hooks/useTitle';
 
 function Details() {
-    const [clicke, setClicke] = useState(false)
+    const [disabledButtonIndex, setDisabledButtonIndex] = useState(null);
+
+
+    function handleDisable(index) {
+        setDisabledButtonIndex(index);
+        toast("Added to your favorite list")
+    }
+
+
+
     const singleData = useLoaderData()
     const { name, image, experiance, like, rating, ingredients, recipes, details, id } = singleData
 
-    const tostHandeler = () => {
-        setClicke(true)
-        toast("Added to your favorite list")
-    }
     useTitle('Details')
     return (
         <Row className='my-4'>
@@ -47,12 +52,7 @@ function Details() {
                         <ListGroup variant="flush">
 
                             <ListGroup.Item>
-                                <Rating className='text-warning' placeholderRating={3.5}
-                                    emptySymbol={<FaStar></FaStar>}
-                                    placeholderSymbol={<FaStar />}
-                                    fullSymbol={<FaStar></FaStar>}></Rating>
-                                <button onClick={tostHandeler} disabled={clicke} className='btn btn-warning ms-5'>Add to Favorite</button>
-                                <ToastContainer />
+
                             </ListGroup.Item>
                             <ListGroup.Item>
                                 <h5 className='text-primary'>recipes</h5>
@@ -60,7 +60,24 @@ function Details() {
                                     {
                                         recipes.map((x, i) => <Col className='g-3 ' md='12'>
                                             <Card className='p-3' key={i}>
-                                                <div ><h6 ><FaArrowRight /> {x}</h6>
+                                                <div >
+                                                    <div className='d-flex justify-content-between mb-3'>
+                                                        <div>
+                                                            <h6 className='mb-0'><FaArrowRight /> {x}</h6>
+                                                            <Rating className='text-warning' placeholderRating={rating}
+                                                                emptySymbol={<FaStar></FaStar>}
+                                                                placeholderSymbol={<FaStar />}
+                                                                fullSymbol={<FaStar></FaStar>}></Rating>
+                                                            <ToastContainer />
+
+                                                        </div>
+                                                        <div>
+                                                        
+                                                            <button onClick={() => handleDisable(i)}
+                                                                disabled={disabledButtonIndex == i} className='btn btn-warning'>Add to Favorite</button>
+                                                        </div>
+                                                    </div>
+
                                                     {ingredients.map((x, i) => <div key={i}>{x}</div>)}
                                                 </div>
                                             </Card>
@@ -82,3 +99,44 @@ function Details() {
 }
 
 export default Details
+
+
+
+/////
+
+
+
+
+
+// import React, { useState } from 'react';
+
+// function App() {
+//   const [disabledButtonIndex, setDisabledButtonIndex] = useState(null);
+
+//   function handleClick(index) {
+//     // some action to be taken when button is clicked
+//   }
+
+//   function handleDisable(index) {
+//     setDisabledButtonIndex(index);
+//   }
+
+//   const items = ['Item 1', 'Item 2', 'Item 3'];
+
+//   return (
+//     <div>
+//       {items.map((item, index) => (
+//         <div key={index}>
+//           <span>{item}</span>
+//           <button
+//             onClick={() => handleClick(index)}
+//             disabled={disabledButtonIndex === index}
+//           >
+//             Click me
+//           </button>
+//           <button onClick={() => handleDisable(index)}>Disable me</button>
+//         </div>
+//       ))}
+//     </div>
+//   );
+// }

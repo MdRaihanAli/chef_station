@@ -17,8 +17,8 @@ function Rejister() {
         const password = e.target.password.value;
         const photo = e.target.photo.value;
         setError('')
-        if (password.length < 6) {
-            setError('please input more than six charecter')
+        if (password.length < 6 || '') {
+            setError('please input minimam than six charecter')
         }
 
         createUser(email, password)
